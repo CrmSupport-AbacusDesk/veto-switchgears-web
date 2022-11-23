@@ -1,0 +1,79 @@
+<div class="sprate-box ">
+  <div class="full-offer">
+    <div class="top-heading">
+      <h2>{{data.id ? 'EDIT':'ADD'}} GIFT</h2>
+      <div class="close-icon">
+        <button mat-button mat-dialog-close ><i class="material-icons">clear</i></button>
+      </div>
+    </div>
+  </div>
+  <form name="offer" (ngSubmit)="f.form.valid && addoffer(f) " #f="ngForm" novalidate autocomplete="off">
+    <div class="padding10">
+      <div class="row">
+        <div class="col s6">
+          <div class="option-field">
+            <div class="control-field">
+              <mat-form-field class="cs-input">
+                <input matInput placeholder="Gift Title" name="gift_title" [(ngModel)] = "offer.gift_title" #gift_title="ngModel"  [disabled]="total_redeem > 0" required>
+              </mat-form-field>  
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s6">
+          <div class="option-field">
+            <div class="control-field">
+              <mat-form-field class="cs-input">
+                <input matInput placeholder="Coupan Points" name="coupon_points" [(ngModel)] = "offer.coupon_points" #coupon_points="ngModel" (keypress)="numeric_Number($event)" [disabled]="total_redeem > 0" required>
+              </mat-form-field>  
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">       
+        <div class="col s12">
+          <div class="option-field">
+            <div class="control-field">
+              <app-ngx-editor height="129px" class="h115" minHieght="50px" [placeholder]="'Gift Specification '" [spellcheck]="true"  [(ngModel)]="offer.gift_specification"  #gift_specification="ngModel" name="gift_specification"></app-ngx-editor>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <div class="cs-file">
+            <p>Upload Image</p>
+            <ul>
+              <li>
+                <div class="add-img-co">
+                  <div class="cs-file  file-up">
+                    <label>
+                      <input type="file" (change)="onUploadChange2($event)" style="display:none;" accept=".png, .jpg, .jpeg " />
+                      <img  src="{{uploadUrl + offer.gift_image}}" alt="" id="img">
+                      <i class="material-icons add-file-icon" >add</i>
+                    </label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="row">
+        <div class="col s12">
+          <div class="control-field">
+            <div class="save un-save">
+              <button mat-button  class="mb0" *ngIf="this.data.id !=0">UPDATE GIFT</button>
+              <button mat-button  class="mb0" *ngIf="this.data.id ==0">SAVE GIFT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </form>
+</div>

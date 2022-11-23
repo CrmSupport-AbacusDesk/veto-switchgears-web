@@ -1,0 +1,156 @@
+
+<div class="main-container" >
+  <div class="offer-container">
+      
+      <div class="loader" *ngIf="loading_list">
+          <div class="loding-logo">
+              <mat-spinner></mat-spinner>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col s6 padding0">
+              <div class="sprate-box">
+                  <div class="full-offer">
+                      <div class="top-heading no-justify">
+                          <a class="back-btn" (click)="goBack()"><i class="material-icons">arrow_back</i></a>
+                          <h2>DISTRIBUTOR DETAIL</h2>
+                      </div>
+                      
+                      <div class="detail-info">
+                          
+                          <div class="basic-details">
+                              <div class="profile-info">
+                                  <ul>
+                                      
+                                    <li>
+                                          
+                                      <figure>
+                                          <div class="right-cont">
+                                              <p>Company Name</p>
+                                              <span>{{getData.company_name}}</span>
+                                          </div>
+                                      </figure>
+                                      
+                                  </li>
+                                      <li>
+                                          <figure>
+                                              <div class="left-img border">
+                                                  <img [src]="getData.profile" (click)="openDialog( getData.id,'test5')" >
+                                              </div>
+                                              <div class="right-cont">
+                                                  <p>Name</p>
+                                                  <span>{{getData.first_name | titlecase }} {{getData.last_name | titlecase }}</span>
+                                              </div>
+                                          </figure>
+                                      </li>
+                                      <li>
+                                          
+                                          <figure>
+                                              <div class="left-img">
+                                                  <img src="assets/contact.svg">
+                                              </div>
+                                              <div class="right-cont">
+                                                  <p>Mobile No.</p>
+                                                  <span>{{getData.mobile_no}}</span>
+                                              </div>
+                                          </figure>
+                                          
+                                      </li>
+                                      
+                                      <li>
+                                          <figure>
+                                              <div class="left-img">
+                                                  <img src="assets/calendar.svg">
+                                              </div>
+                                              <div class="right-cont">
+                                                  <p>Date of Birth</p>
+                                                  <span>{{getData.dob  | date : 'dd MMM yyyy'}}</span>
+                                              </div>
+                                          </figure>
+                                          
+                                      </li>
+                                  </ul>
+                                  
+                                  <ul class="mt10">
+                                      <li>
+                                          <figure>
+                                              <div class="left-img">
+                                                  <img src="assets/book.svg">
+                                              </div>
+                                              <div class="right-cont">
+                                                  <p>Address</p>
+                                                  <span>{{getData.address | titlecase }}   {{getData.city | titlecase }} {{getData.district | titlecase }} {{getData.state | titlecase }} {{getData.pincode}}</span>
+                                                  
+                                              </div>
+                                          </figure>
+                                      </li>
+                                  </ul>
+                                  
+                                  <ul class="mt10">
+                                      <li>
+                                          <figure>
+                                              <div class="left-img">
+                                                  <img src="assets/qr-code.svg">
+                                              </div>
+                                              <div class="right-cont">
+                                                  <p>Referral Code</p>
+                                                  <span>{{!getData.referral_code ? 'N/A' : getData.referral_code | uppercase}}</span>
+                                              </div>
+                                          </figure>
+                                      </li>
+                                      <li *ngIf="getData.reference_by">
+                                          <figure>
+                                              <div class="left-img">
+                                                  <img src="assets/man.svg">
+                                              </div>
+                                              <div class="right-cont">
+                                                  <p>Reference By</p>
+                                                  <span>{{getData.reference_by}} / {{getData.reference_mobile_no}}</span>
+                                              </div>
+                                          </figure>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div> 
+              </div>
+          </div>
+          <div class="col s6 padding0 pl15">
+              <div class="sprate-box gift-offer">
+                  <div class="full-offer">
+                      <div class="top-heading">
+                          <h2>DOCUMENT DETAIL</h2>
+                      </div>
+                      
+                      <div class="sprate-box defult">
+                          <div class="detail-info defult-css">
+                              <div class="img-box">
+                                  <img src="{{getData.document_image ? getData.document_image : 'assets/default-image.png'}}" (click)="getData.document_image!='' && openDialog( getData.id,'test6')">
+                              </div>
+                              <div class="basic-details">
+                                  <div class="profile-info">
+                                      <ul>
+                                          <li>
+                                              <p>Document Type</p>
+                                              <span>{{getData.document_type!='' ? getData.document_type : 'N/A'}}</span>
+                                          </li>
+                                          
+                                          <li>
+                                              <p>Document Number</p>
+                                              <span>{{getData.document_no ? getData.document_no : 'N/A'}}</span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+      
+      <div class="add-button">
+          <button mat-button (click)="edit()"><i class="material-icons">edit</i></button>
+      </div>
+  </div>
+</div>

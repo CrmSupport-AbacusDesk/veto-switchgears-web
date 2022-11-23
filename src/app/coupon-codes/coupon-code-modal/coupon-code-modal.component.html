@@ -1,0 +1,73 @@
+<div class="gift-box" *ngIf="target.target == 'taget1'">
+    <div class="gift-heading">
+        <div class="export-count">
+            <p>Scan QR Codes</p>
+        </div>
+        
+        <div class="close-icon">
+            <button mat-button (click)="close()" ><i class="material-icons">clear</i></button>
+        </div>
+    </div>
+ 
+    
+    <div class="modal-body pt0">
+        <div class="row">
+            <div class="col s12">
+                <div class="option-field">
+                    <div class="control-field">
+                        <mat-form-field  class="cs-input">
+                            <textarea matInput placeholder="Coupon Code" class="h150"  [(ngModel)]="Couponform.qr_code"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row mb0">
+            <div class="col s4">
+                <div class="option-field">
+                    <div class="control-field">
+                        <mat-form-field  class="cs-input">
+                            <input matInput placeholder="Retailer Name" [(ngModel)]="Couponform.dealer_name" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="col s8">
+                <div class="option-field">
+                    <div class="control-field">
+                        <mat-form-field  class="cs-input">
+                            <input matInput placeholder="Address"  [(ngModel)]="Couponform.dealer_address" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        
+        <div mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="saveCoupon()">Save</button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="gift-box" *ngIf="target.target == 'taget2'">
+    <div class="gift-heading">
+        <div class="export-count">
+            <p>Transfer Remark</p>
+        </div>
+        
+        <div class="close-icon">
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+    </div>
+ 
+    
+    <div class="modal-body">
+        <p style="font-size: 15px;">{{couponData.failure_reason ? couponData.failure_reason:'N/A'}}</p>
+    </div>
+</div>

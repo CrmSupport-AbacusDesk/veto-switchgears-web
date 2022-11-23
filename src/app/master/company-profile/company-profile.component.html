@@ -1,0 +1,60 @@
+<div class="loader" *ngIf = "loading_list">
+  <div class="loding-logo">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+<div class="main-container pr0 ppl0">
+  <div class="fixed">
+    <div class="middle-container">
+      <div class="tabs-list">
+        <h1>Master</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container-outer tab-container pb15">
+    <app-master-tab></app-master-tab>
+
+    <div class="sprate-box mt10">
+      <div class="full-offer">
+        <div class="top-heading">
+          <h2>EDIT COMPANY PROFILE <br> <span class="up-date">(Last update date {{profile.date_created | date: 'dd MMM yyyy'}})</span></h2>
+        </div>
+      </div>
+      <div class="row mt15">
+        
+        <div class="col s3">
+          <div class="edit-picture">
+            <label>
+              <input type="file" (change)="onUploadChange1($event)" style="display:none;" accept=".png, .jpg, .jpeg" required />
+              <img  [src]="profile.profile_banner" alt="" id="img">
+              <i class="material-icons add-file-icon" matRipple >create</i>
+            </label>
+          </div>
+        </div>
+        <div class="col s9">
+          <div class="option-field">
+            <div class="row mb0">
+              <div class="col s12">
+                <div class="control-field">
+                  <app-ngx-editor height="180px"  [placeholder]="'About Us '" [spellcheck]="true"  [(ngModel)]="profile.about"  #description="ngModel" name="about"></app-ngx-editor>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="row">           
+        <div class="col s12">
+          <div class="save text-right" >
+            <button class="mb0" mat-button  (click)="saveloyality()" >SAVE</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+  
+</div>

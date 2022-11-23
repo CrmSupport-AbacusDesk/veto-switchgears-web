@@ -1,0 +1,94 @@
+<div class="loader" *ngIf="loading_list">
+    <div class="loding-logo">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>
+<div class="main-container ">
+    <div class="fixed">
+        <div class="middle-container">
+            <div class="tabs-list">
+                <h1>Master</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-outer tab-container pb15">
+        <app-master-tab></app-master-tab>
+
+        <div class="sprate-box mt10 ">
+            <div class="full-offer">
+                <div class="top-heading">
+                    <h2>UPDATE POINTS DETAILS</h2>
+                    <!-- <p>Indicates required fields ( * )</p> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="option-field">
+                        <div class="row mb0">
+                            <div class="col s3">
+                                <div class="control-field">
+                                    <mat-form-field class="cs-input">
+                                        <input matInput placeholder="Dealer Welcome Points" (keypress)="number($event)" name="dealer_points" [(ngModel)]="refer.dealer_points">
+                                    </mat-form-field>  
+                                </div>
+                            </div>
+                            <div class="col s3">
+                                <div class="control-field">
+                                    <mat-form-field class="cs-input">
+                                        <input matInput placeholder="Electrician Welcome Points" (keypress)="number($event)" name="mechanic_points" [(ngModel)]="refer.mechanic_points">
+                                    </mat-form-field>  
+                                </div>
+                            </div>
+                            <div class="col s3">
+                                <div class="control-field">
+                                    <mat-form-field class="cs-input">
+                                        <input matInput placeholder="Referral User Points" (keypress)="number($event)" name="referal_point" [(ngModel)]="refer.referal_point" >
+                                    </mat-form-field>  
+                                </div>
+                            </div>
+                            <div class="col s3">
+                                <div class="control-field">
+                                    <mat-form-field class="cs-input">
+                                        <input matInput placeholder="Referral Owner Points" (keypress)="number($event)" name="owner_referal_point" [(ngModel)]="refer.owner_referal_point" >
+                                    </mat-form-field>  
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="row mb0">
+                            <div class="col s3">
+                                <div class="control-field">
+                                    <mat-form-field class="cs-input">
+                                        <input matInput placeholder="Min Gift Redeem (%)" name="min_gif_per" (keypress)="number($event)" [(ngModel)]="refer.min_gif_per" >
+                                    </mat-form-field>  
+                                </div>
+                            </div>
+                            
+                            <div class="col s3">
+                                <div class="control-field">
+                                    <mat-form-field class="cs-input">
+                                        <input matInput placeholder="Birthday Points" (keypress)="number($event)" name="birthday_points" [(ngModel)]="refer.birthday_points">
+                                    </mat-form-field>  
+                                </div>
+                            </div>
+                            <div class="col s3">
+                                <div class="control-field">
+                                    <mat-form-field class="cs-input">
+                                        <input matInput placeholder="Cash Redemtion Limit" (keypress)="number($event)" name="cash_redemption_limit" [(ngModel)]="refer.cash_redemption_limit">
+                                    </mat-form-field>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 ">
+                    <div class="save text-right">
+                        <button class="mb0" (click)="update_details()" mat-button>SAVE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

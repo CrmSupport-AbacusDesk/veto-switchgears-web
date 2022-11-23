@@ -1,0 +1,172 @@
+
+    <mat-dialog-content class="mat-typography">
+        
+        <div class="product-img " *ngIf="part_data.mode == 'test1'">  
+            <div class="btn-group">
+                <a mat-icon-button href="{{uploadUrl+part_data.id}}" download target="_blank" color="accent" matTooltip="download">
+                    <mat-icon aria-label="Example icon-button with a heart icon">get_app</mat-icon>
+                </a>
+                <button mat-icon-button [mat-dialog-close]="false"  color="warn"  matTooltip="close">
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="uploadUrl+part_data.id">
+            </div>
+        </div>
+        
+        <div class="product-img " *ngIf=" part_data.mode == 'test2'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="uploadUrl+part_data.id">
+            </div>
+        </div>
+        
+
+     
+
+        <div class="product-img" *ngIf="part_data.mode == 'showGift_img'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="part_data.reedem_id">
+            </div>
+        </div>
+
+        <div class="product-img " *ngIf=" part_data.mode == 'test3'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="news.image">
+            </div>
+        </div>
+        
+        <div class="product-img " *ngIf=" part_data.mode == 'test4'">  
+            <!-- <div class="form-area">
+                <img [src]="gift.image">
+            </div> -->
+            
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="uploadUrl+gift_image">
+            </div>
+            <!-- <div class="form-area" *ngIf="gift.gift_image!=''">
+                <img [src]="uploadUrl+gift.gift_image">
+            </div> -->
+           
+        </div>
+        
+        <div class="product-img " *ngIf=" part_data.mode == 'test5'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="karigarImage.profile">
+            </div>
+           
+        </div>
+        
+        <div class="product-img " *ngIf=" part_data.mode == 'test6'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="uploadUrl+documentImage.document_image">
+            </div>
+           
+        </div>
+
+        <div class="product-img " *ngIf=" part_data.mode == 'test9'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="documentImage.visiting_card">
+            </div>
+           
+        </div>
+        
+        <div class="product-img " *ngIf=" part_data.mode == 'test7'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <!-- <img [src]="image_type == 'en' ? uploadUrl+offerImage.banner : uploadUrl+offerImage.hin_banner"> -->
+                <!-- <img [src]="image_type == 'en' ? uploadUrl+offerImage.term_image : uploadUrl+offerImage.hin_term_image"> -->
+                <img [src]="uploadUrl+offerImage.offer_banner">
+            </div>
+           
+        </div>
+        
+        <div class="product-img " *ngIf=" part_data.mode == 'test8'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="db.myurl+'app/uploads/'+part_data.id">
+            </div>
+           
+        </div>
+        
+        <div class="product-img " *ngIf=" part_data.mode == 'test15'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="uploadUrl+redeemGiftImage.gift_image">
+            </div>
+           
+        </div>
+        
+        <!-- <div class="product-img " *ngIf=" part_data.mode == 'base64'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+                <img [src]="mastergift">
+            </div>
+            
+        </div> -->
+        
+        <div class="product-img " *ngIf=" part_data.mode == 'normal'">  
+            <div class="btn-group">
+                <button mat-icon-button [mat-dialog-close]="false" >
+                    <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+                </button>
+            </div>
+            <div class="form-area">
+
+                <!-- {{mastergift}} -->
+                <img [src]="mastergift">
+            </div>
+           
+        </div>
+    </mat-dialog-content>
