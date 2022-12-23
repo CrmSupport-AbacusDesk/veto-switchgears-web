@@ -27,7 +27,7 @@ export class DigitallistComponent implements OnInit {
   digitalist(){
 
     this.loading_list = true;
-    this.db.post_rqst({}, 'app_karigar/product_catalogue_list')
+    this.db.post_rqst({}, 'app_karigar/product_catalogue_list_web')
     .subscribe( d => {  
       this.loading_list = false;  
       console.log( d );

@@ -20,14 +20,14 @@
 
          // live url
 
-        //  myurl = 'https://apps.abacusdesk.com/vetoswitchgears/dd_api/';
-        //  uploadUrl = "https://apps.abacusdesk.com/vetoswitchgears/dd_api/app/uploads/";
+         myurl = 'https://apps.abacusdesk.com/vetoswitchgears/dd_api/';
+         uploadUrl = "https://apps.abacusdesk.com/vetoswitchgears/dd_api/app/uploads/";
 
 
         // testing url
 
-        myurl = 'https://devcrm.abacusdesk.com/vetoswitchgears/dd_api/';
-        uploadUrl = "https://devcrm.abacusdesk.com/vetoswitchgears/dd_api/app/uploads/";
+        // myurl = 'https://devcrm.abacusdesk.com/vetoswitchgears/dd_api/';
+        // uploadUrl = "https://devcrm.abacusdesk.com/vetoswitchgears/dd_api/app/uploads/";
         
         // local
         // myurl = 'http://localhost/advance_api/';

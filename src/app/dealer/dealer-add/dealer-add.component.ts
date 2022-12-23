@@ -32,6 +32,7 @@ export class DealerAddComponent implements OnInit {
       this.route.params.subscribe(params => {
        
           this.karigar_id = params['dealer_id'];
+          this.docId = params['dealer_id'];
           
           if (this.karigar_id)
           {
